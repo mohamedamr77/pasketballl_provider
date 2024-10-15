@@ -1,6 +1,8 @@
 import 'package:basketsballprovider/core/extenstion/screen_size.dart';
 import 'package:basketsballprovider/feature/home/presentation/view/widgets/score.dart';
+import 'package:basketsballprovider/feature/home/presentation/view_mdoel/provider_team_a.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'custom_button.dart';
 import 'name_team.dart';
@@ -16,22 +18,35 @@ class TeamA extends StatelessWidget {
         const NameTeam(
           nameTeam: 'Team A',
         ),
-        const Score(
-          score: 0,
-        ),
+         Selector<ProviderTeamA,int>(
+           builder: (BuildContext context, score, Widget? child) {
+             return Score(
+               score: score,
+             );
+           },
+           selector: (BuildContext context, providerTeamA ) => providerTeamA.scoreA,
+         ),
         CustomIncrementButton(
           point: 1,
-          onPressed: () {},
+          onPressed: () {
+            context.read<ProviderTeamA>().incrementScoreA(valueIncrement: 1);
+          },
         ),
         0.015.ph,
         CustomIncrementButton(
           point: 2,
-          onPressed: () {},
+          onPressed: () {
+            context.read<ProviderTeamA>().incrementScoreA(valueIncrement: 2);
+
+          },
         ),
         0.015.ph,
         CustomIncrementButton(
           point: 3,
-          onPressed: () {},
+          onPressed: () {
+            context.read<ProviderTeamA>().incrementScoreA(valueIncrement: 3);
+
+          },
         ),
       ],
     );

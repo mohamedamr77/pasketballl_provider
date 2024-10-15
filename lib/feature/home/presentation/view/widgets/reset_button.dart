@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../view_mdoel/provider_team_a.dart';
 
 class ResetButton extends StatelessWidget {
   const ResetButton({super.key});
@@ -11,7 +14,9 @@ class ResetButton extends StatelessWidget {
       child: SizedBox(
         width: MediaQuery.sizeOf(context).width * 0.5,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            context.read<ProviderTeamA>().resetScoreA();
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.blue,
           ),

@@ -1,11 +1,17 @@
 import 'package:basketsballprovider/core/utils/app_color.dart';
 import 'package:basketsballprovider/feature/home/presentation/view/home_screen.dart';
+import 'package:basketsballprovider/feature/home/presentation/view_mdoel/provider_team_a.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'core/utils/const_variables.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( ChangeNotifierProvider(
+      create: (BuildContext context) {
+        return ProviderTeamA();
+      },
+  child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

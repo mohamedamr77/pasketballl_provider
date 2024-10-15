@@ -9,8 +9,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-        alignment: Alignment.bottomCenter, children: [
+    return Stack(alignment: Alignment.bottomCenter, children: [
       Scaffold(
         body: const HomeBody(),
         appBar: AppBar(

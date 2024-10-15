@@ -18,14 +18,15 @@ class TeamA extends StatelessWidget {
         const NameTeam(
           nameTeam: 'Team A',
         ),
-         Selector<ProviderTeamA,int>(
-           builder: (BuildContext context, score, Widget? child) {
-             return Score(
-               score: score,
-             );
-           },
-           selector: (BuildContext context, providerTeamA ) => providerTeamA.scoreA,
-         ),
+        Selector<ProviderTeamA, int>(
+          builder: (BuildContext context, score, Widget? child) {
+            return Score(
+              score: score,
+            );
+          },
+          selector: (BuildContext context, providerTeamA) =>
+              providerTeamA.scoreA,
+        ),
         CustomIncrementButton(
           point: 1,
           onPressed: () {
@@ -37,7 +38,6 @@ class TeamA extends StatelessWidget {
           point: 2,
           onPressed: () {
             context.read<ProviderTeamA>().incrementScoreA(valueIncrement: 2);
-
           },
         ),
         0.015.ph,
@@ -45,7 +45,6 @@ class TeamA extends StatelessWidget {
           point: 3,
           onPressed: () {
             context.read<ProviderTeamA>().incrementScoreA(valueIncrement: 3);
-
           },
         ),
       ],

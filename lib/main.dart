@@ -8,12 +8,14 @@ import 'core/utils/const_variables.dart';
 import 'feature/home/presentation/view_mdoel/provider_team_b.dart';
 
 void main() {
-  runApp(  MultiProvider(
-      providers: [
-        ChangeNotifierProvider( create: (BuildContext context) => ProviderTeamA(),),
-        ChangeNotifierProvider(create: (BuildContext context) =>ProviderTeamB(),),
-      ],
-      child: const MyApp()));
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(
+      create: (BuildContext context) => ProviderTeamA(),
+    ),
+    ChangeNotifierProvider(
+      create: (BuildContext context) => ProviderTeamB(),
+    ),
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
